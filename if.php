@@ -5,6 +5,7 @@ $b = 10;
 $c = '10';
 
 // Shorten the next 2 statements into an if/else
+
 if ($a < $b) 
 {
     echo "$a is less than $b\n";
@@ -15,13 +16,14 @@ else
 }
 
 // Shorten the next 2 statements into an if/else
+
 if ($b >= $c) 
 {
     echo "$b is greater than or equal to $c\n";
 } 
-if ($b <= $c) 
+else
 {
-    echo "$b is less than or equal to $c\n";
+    echo "$b is not greater or equal to $c\n";
 }
 
 // combine the next 4 conditionals into 
@@ -40,7 +42,7 @@ elseif ($b !== $c)
 {
     echo "$b is not identical to $c\n";
 } 
-elseif ($b != $c) 
+else
 {
     echo "$b is not equal to $c\n";
 }
