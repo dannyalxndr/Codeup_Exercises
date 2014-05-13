@@ -2,11 +2,11 @@
 
 fwrite (STDOUT, 'What is your name? ');
 
-$name = trim (fgets(STDIN));
+$name = trim(fgets(STDIN));
 
-fwrite(STDOUT, "Hello there $name. Choose a starting number.." . PHP_EOL);
+fwrite(STDOUT, "Hello there $name. Choose a starting number..\n");
 
-$number1 = (int) fgets(STDIN);
+$number1 = trim(fgets(STDIN));
 
 if (!is_numeric($number1)) 
 {
@@ -14,13 +14,18 @@ if (!is_numeric($number1))
 	exit(1);
 }
 
-fwrite(STDOUT, "Great! Now choose an ending number.." . PHP_EOL);
+fwrite(STDOUT, "Great! Now choose an ending number..\n");
 
-$number2 = (int) fgets(STDIN) . PHP_EOL;
+$number2 = trim(fgets(STDIN));
+if (!is_numeric($number2)) 
+{
+	echo "I need a number, chief.\n";
+	exit(1);
+}
 
 fwrite(STDOUT, "Choose your increment." . PHP_EOL);
 
-$increment = (int) fgets(STDIN);
+$increment = trim(fgets(STDIN));
 if ($increment == NULL) 
 {
 	$increment = 1;
