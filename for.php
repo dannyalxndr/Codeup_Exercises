@@ -21,7 +21,11 @@ $number2 = (int) fgets(STDIN) . PHP_EOL;
 fwrite(STDOUT, "Choose your increment." . PHP_EOL);
 
 $increment = (int) fgets(STDIN);
-if (!is_numeric($increment)) 
+if ($increment == NULL) 
+{
+	$increment = 1;
+}
+elseif (!is_numeric($increment)) 
 {
 	echo "I need a number, chief.\n";
 	exit(1);
