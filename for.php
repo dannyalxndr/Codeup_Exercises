@@ -8,21 +8,24 @@ fwrite(STDOUT, "Hello there $name. Choose a starting number.." . PHP_EOL);
 
 $number1 = (int) fgets(STDIN);
 
-if (!is_numeric($number1)) {
+if (!is_numeric($number1)) 
+{
 	echo "I need a number, chief.\n";
 	exit(1);
 }
 
-fwrite(STDOUT, "Great! Now choose an ending number to see all the numbers in between." . PHP_EOL);
+fwrite(STDOUT, "Great! Now choose an ending number.." . PHP_EOL);
 
 $number2 = (int) fgets(STDIN) . PHP_EOL;
 
-// if (!is_numeric($number2)) {
-// 	echo "I need a number, chief.\n";
-// 	exit(1);
-// }
+fwrite(STDOUT, "Choose your increment." . PHP_EOL);
 
-// Allowing greater or lesser number to be entered in any order
+$increment = (int) fgets(STDIN);
+if (!is_numeric($increment)) 
+{
+	echo "I need a number, chief.\n";
+	exit(1);
+}
 if ($number1 < $number2) 
 { 
 	define('LOWEND', (int)$number1);
@@ -40,12 +43,12 @@ else
 }
 
 fwrite(STDOUT, "Here you go..\n");
-for ( $number1 ; $number1 <= $number2 ; $number1++ ) 
+for ( $number1 ; $number1 <= $number2 ; $number1 = $number1 + $increment ) 
 {
 	echo "$number1\n";
 }
 
-echo "There you go! :)";
+echo "There you go! :) " . PHP_EOL;
 
 
 
