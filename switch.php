@@ -5,28 +5,28 @@ date_default_timezone_set('America/Chicago');
 
 // Get Day of Week as number
 // 1 (for Monday) through 7 (for Sunday)
-$day_of_week = date('3');
+$day_of_week = date('N');
 
 switch($day_of_week) {
-    case '1':
+    case 1:
         echo 'monday' . PHP_EOL;
         break;
-  	case '2':
+  	case 2:
         echo 'tuesday' . PHP_EOL;
         break;
-    case '3':
+    case 3:
         echo 'wednesday' . PHP_EOL;
         break;
-    case '4':
+    case 4:
         echo 'thursday' . PHP_EOL;
         break;
-    case '5':
+    case 5:
         echo 'friday' . PHP_EOL;
         break;
-    case '6':
+    case 6:
         echo 'saturday' . PHP_EOL;
         break;
-    case '7':
+    case 7:
         echo 'sunday' . PHP_EOL;
         break;
 }
