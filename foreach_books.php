@@ -8,15 +8,15 @@ $books =
     'A Tale of Two Cities' =>   ['published' => 1859,    'author' => 'Charles Dickens'     ,  'pages'      => 544]
 ];
 
-//Construct a loop that iterates through each book and then each book's keys and values. 
-//Have it output the book's title, then list the key value pairs for the data about each book.
-
-foreach ($books as $book => $details) 
-{   
+foreach($books as $book => $details)
+{
     if ($details['published']>1950)
     {
         echo $book . PHP_EOL;
+        foreach($details as $detail => $value)
+        {
+            echo "$detail: $value\n";
+        }
+    echo "- - - ** - - -" . PHP_EOL;
     }
-    // echo $book . " was published in " . $details['published'] . " by " . 
-    // $details['author'] . " and has " . $details['pages'] . " pages." . PHP_EOL;
 }
