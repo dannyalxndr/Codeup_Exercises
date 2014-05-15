@@ -4,58 +4,57 @@ function add($a, $b) {
 	if(is_numeric($a) && is_numeric($b)) {
 		echo $a + $b;
 	} else {
-		echo "Those are not numbers YO!!!";
+		echo "$a plus $b will not work. Please choose 2 numbers.";
 	}
 	echo PHP_EOL;
 }
+add(1,2);
 
 function subtract($a, $b) {
  	if(is_numeric($a) && is_numeric($b)) {
 		echo $a - $b;
 	} else {
-		echo "Those are not numbers YO!!!";
+		echo "$a minus $b is will not work. Please choose 2 numbers.";
 	}
 	echo PHP_EOL;
 }
+subtract(4,3);
 
 function multiply($a, $b) {
-	if(is_numeric($a) && is_numeric($b))
-	{
+	if(is_numeric($a) && is_numeric($b)) {
 		echo $a * $b;
 	} else {
-		echo "Those are not numbers YO!!!";
+		echo "$a multiplied by $b will not work. Please choose 2 numbers.";
 	}
 	echo PHP_EOL;
 }
+multiply(3,2);
 
 function divide($a, $b) {
 	if(is_numeric($a) && is_numeric($b)) {
-		if($a == 0 || $b == 0) {
-			echo "Please don't divide using 0 .... :) \n";
-			exit(0);
+		if($b == 0) {
+			echo "$a divided by $b will not work. Let's not use a 0.\n";
+		} else {
+			echo $a / $b;
 		} 
-		echo $a / $b;
-
 	} else {
-		echo "Those are not numbers YO!!!";
+		echo "$a divided by $b will not work. Please choose 2 numbers.";
 	}
 	echo PHP_EOL;
 }
+divide(0,20);
 
 function modulus($a, $b) {
 	if(is_numeric($a) && is_numeric($b)) {
 		echo $a % $b;
 	} else {
-		echo "Those are not numbers YO!!!";
+		echo "The modulus of $a and $b will not work. Please choose 2 numbers.";
 	}
 	echo PHP_EOL;
 }
-
-add(1,"1+2");
-subtract(4,1);
-multiply(3,"1+2");
-divide(0,1);
 modulus(7,2);
+
+
 
 
 
