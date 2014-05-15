@@ -1,20 +1,24 @@
 <?php
 
+function error() {
+		echo "*Error Message*";
+}
+
 function add($a, $b) {
 	if(is_numeric($a) && is_numeric($b)) {
 		echo $a + $b;
 	} else {
-		echo "$a plus $b will not work. Please choose 2 numbers.";
+		error();
 	}
 	echo PHP_EOL;
 }
-add(1,2);
+add(1,"a");
 
 function subtract($a, $b) {
  	if(is_numeric($a) && is_numeric($b)) {
 		echo $a - $b;
 	} else {
-		echo "$a minus $b is will not work. Please choose 2 numbers.";
+		error();
 	}
 	echo PHP_EOL;
 }
@@ -24,21 +28,21 @@ function multiply($a, $b) {
 	if(is_numeric($a) && is_numeric($b)) {
 		echo $a * $b;
 	} else {
-		echo "$a multiplied by $b will not work. Please choose 2 numbers.";
+		error();
 	}
 	echo PHP_EOL;
 }
-multiply(3,2);
+multiply(3,"a");
 
 function divide($a, $b) {
 	if(is_numeric($a) && is_numeric($b)) {
 		if($b == 0) {
-			echo "$a divided by $b will not work. Let's not use a 0.\n";
+			error();
 		} else {
 			echo $a / $b;
 		} 
 	} else {
-		echo "$a divided by $b will not work. Please choose 2 numbers.";
+		error();
 	}
 	echo PHP_EOL;
 }
@@ -48,11 +52,12 @@ function modulus($a, $b) {
 	if(is_numeric($a) && is_numeric($b)) {
 		echo $a % $b;
 	} else {
-		echo "The modulus of $a and $b will not work. Please choose 2 numbers.";
+		error();
 	}
 	echo PHP_EOL;
 }
-modulus(7,2);
+modulus(7,"a");
+
 
 
 
