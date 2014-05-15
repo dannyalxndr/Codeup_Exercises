@@ -1,62 +1,57 @@
 <?php
 
-function error() {
-		echo "*Error Message*";
+function check($a,$b) {
+	if (is_numeric($a) && is_numeric($b)) {
+		return true;
+	} else {
+		echo "Error! \$a and/or \$b was not a number!\n";
+		return false;
+	}
 }
 
-function add($a, $b) {
-	if(is_numeric($a) && is_numeric($b)) {
-		echo $a + $b;
-	} else {
-		error();
-	}
-	echo PHP_EOL;
+function add($a,$b) {
+	if (check($a,$b)) {
+		return $a + $b . PHP_EOL;
+	} 
 }
-add(1,"a");
+
+echo add(1,2);
 
 function subtract($a, $b) {
- 	if(is_numeric($a) && is_numeric($b)) {
-		echo $a - $b;
-	} else {
-		error();
-	}
-	echo PHP_EOL;
+ 	if(check($a,$b)) {
+		return $a - $b . PHP_EOL;
+	} 
 }
-subtract(4,3);
+
+echo subtract(4,3);
 
 function multiply($a, $b) {
-	if(is_numeric($a) && is_numeric($b)) {
-		echo $a * $b;
-	} else {
-		error();
-	}
-	echo PHP_EOL;
+	if(check($a,$b)) {
+		return $a * $b . PHP_EOL;
+	} 
 }
-multiply(3,"a");
+
+echo multiply(3,3);
 
 function divide($a, $b) {
-	if(is_numeric($a) && is_numeric($b)) {
+	if(check($a,$b)) {
 		if($b == 0) {
-			error();
-		} else {
-			echo $a / $b;
-		} 
-	} else {
-		error();
+			echo "Error: Can't divide by 0.\n";
+			return false;
+		}
+		return $a / $b . PHP_EOL;	
 	}
-	echo PHP_EOL;
 }
-divide(0,20);
+
+echo divide(3,0);
 
 function modulus($a, $b) {
-	if(is_numeric($a) && is_numeric($b)) {
-		echo $a % $b;
-	} else {
-		error();
-	}
-	echo PHP_EOL;
+	if(check($a,$b)) {
+		return $a % $b . PHP_EOL;
+	} 
 }
-modulus(7,"a");
+
+echo modulus(7,6);
 
 
 
