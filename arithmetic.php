@@ -16,7 +16,12 @@ function divide($a, $b) {
     echo $a / $b . PHP_EOL;
 }
 
+function modulus($a, $b) {
+	echo $a % $b . PHP_EOL;
+}
+
 echo add(1,1);
 echo subtract(5,2);
 echo multiply(3,3);
 echo divide(4,2);
+echo modulus(5,3);
