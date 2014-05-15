@@ -20,8 +20,8 @@ function modulus($a, $b) {
 	echo $a % $b . PHP_EOL;
 }
 
-echo add(1,1);
-echo subtract(5,2);
-echo multiply(3,3);
-echo divide(4,2);
-echo modulus(5,3);
+add(1,2);
+subtract(4,3);
+multiply(3,4);
+divide(9,3);
+modulus(7,2);
