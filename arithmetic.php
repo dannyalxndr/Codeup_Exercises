@@ -1,8 +1,7 @@
 <?php
 
 function add($a, $b) {
-	if(is_numeric($a) && is_numeric($b))
-	{
+	if(is_numeric($a) && is_numeric($b)) {
 		echo $a + $b;
 	} else {
 		echo "Those are not numbers YO!!!";
@@ -11,8 +10,7 @@ function add($a, $b) {
 }
 
 function subtract($a, $b) {
- 	if(is_numeric($a) && is_numeric($b))
-	{
+ 	if(is_numeric($a) && is_numeric($b)) {
 		echo $a - $b;
 	} else {
 		echo "Those are not numbers YO!!!";
@@ -31,9 +29,13 @@ function multiply($a, $b) {
 }
 
 function divide($a, $b) {
-	if(is_numeric($a) && is_numeric($b))
-	{
+	if(is_numeric($a) && is_numeric($b)) {
+		if($a == 0 || $b == 0) {
+			echo "Please don't divide using 0 .... :) \n";
+			exit(0);
+		} 
 		echo $a / $b;
+
 	} else {
 		echo "Those are not numbers YO!!!";
 	}
@@ -41,8 +43,7 @@ function divide($a, $b) {
 }
 
 function modulus($a, $b) {
-	if(is_numeric($a) && is_numeric($b))
-	{
+	if(is_numeric($a) && is_numeric($b)) {
 		echo $a % $b;
 	} else {
 		echo "Those are not numbers YO!!!";
@@ -51,9 +52,9 @@ function modulus($a, $b) {
 }
 
 add(1,"1+2");
-subtract(4,3);
+subtract(4,1);
 multiply(3,"1+2");
-divide(9,3);
+divide(0,1);
 modulus(7,2);
 
 
