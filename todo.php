@@ -9,7 +9,7 @@ function list_items($list)
     foreach ($list as $key => $value)
     {
         $key++;
-        echo "[{$key}] {$value}\n";
+        $result .= "[{$key}] {$value}\n";  
     }
     return $result;
 }
