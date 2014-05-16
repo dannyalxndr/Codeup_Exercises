@@ -1,52 +1,51 @@
 <?php
 
-// Create array to hold list of todo items
 $items = array();
-  
-// The loop!
-do 
+
+function list_items($list)
 {
-    // Iterate through list items
-    foreach ($items as $key => $item) 
+    $result = '';
+
+    foreach ($list as $key => $value)
     {
         $key++;
-        // Display each item and a newline
-        echo "[{$key}] {$item}\n";
+        echo "[{$key}] {$value}\n";
     }
-    
-    // Show the menu options
+    return $result;
+}
+
+function get_input($upper = false) 
+{
+    $result = trim(fgets(STDIN));
+    return $upper ? strtoupper($result) : $result;
+}
+
+do 
+{
+    echo list_items($items);
     echo '(N)ew item, (R)emove item, (Q)uit : ';
-    
-    // Get the input from user
-    // Use trim() to remove whitespace and newlines
-    $input = trim(fgets(STDIN));
- 
-    // Check for actionable input
-    if (($input == 'N') || ($input == 'n')) 
+    $input = get_input(true);
+
+    if ($input == 'N') 
     {
-        // Ask for entry
         echo 'Enter item: ';
-        // Add entry to list array
-        $items[] = trim(fgets(STDIN));
+        $items[] = get_input();
     } 
-    elseif (($input == 'R') || ($input == 'r'))
+    elseif ($input == 'R') 
     {
-        // Remove which item?
         echo 'Enter item number to remove: ';
-        // Get array key
-        $key = trim(fgets(STDIN)) - 1;
-        // Remove from array
+        $key = get_input();
+        $key--;
         unset($items[$key]);
         $items = array_values($items);
     }
 } 
-// Exit when input is (Q)uit
-while (($input != 'Q') && ($input != 'q'));
+while ($input != 'Q');
 
-// Say Goodbye!
 echo "Goodbye!\n";
-
-// Exit with 0 errors
 exit(0);
+
+
+
 
 
