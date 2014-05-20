@@ -23,6 +23,7 @@
 // Converts array into list n1, n2, ..., and n3
 function humanized_list($array) {
 	// Your solution goes here!
+	sort($array);
 	$last_item = array_pop($array);
 	$last_item = "and $last_item";
 	array_push($array, $last_item);
