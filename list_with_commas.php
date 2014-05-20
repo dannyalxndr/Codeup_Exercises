@@ -14,11 +14,12 @@ function humanized_list($string, $x = false)
 
 	// removes last item and replaces it with new item
 	$last_item = array_pop($array);
-	$last_item = "and $last_item";
-	array_push($array, $last_item);
 
-	// new string is returned outside the function
-	return implode(', ', $array);
+	$array[] = "and $last_item";
+	
+	$string = implode(', ', $array);
+
+	return $string;
 }
 
 // the string
