@@ -21,10 +21,13 @@ function humanized_list($string, $x = false)
 	return implode(', ', $array);
 }
 
+// the string
 $physicists_string = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
 
-$famous_fake_physicists = humanized_list($physicists_string);
+// calling function to edit the string
+$famous_fake_physicists = humanized_list($physicists_string, true);
 
+// final result
 echo "Some of the most famous fictional theoretical physicists are {$famous_fake_physicists}.";
 
 
